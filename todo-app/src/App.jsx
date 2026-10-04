@@ -8,6 +8,33 @@ function App(){
   { id: 3, text: "Mobilladdare", done: false },
 ])
 
+
+function toggleDone(id) {
+  setThings(
+    things.map((thing) =>
+      thing.id === id ? { ...thing, done: !thing.done } : thing
+    )
+  )
+}
+
+const [draft, setDraft] = useState("");
+
+function handleChange(e) {
+  setDraft(e.target.value);
+}
+
+function handleAdd() {
+  const trimmed = draft.trim();
+  if (!trimmed) return;
+
+  setThings([
+    ...things,
+    { id: Date.now(), text: trimmed, done: false }
+  ]);
+
+  setDraft("");
+}
+
 return (
   <main>
     <h1>ToDo lista</h1>
@@ -15,12 +42,24 @@ return (
     <ul>
       {things.map(thing => (
       <li key={thing.id}>
+       <button
+        onClick={() => toggleDone(thing.id)}>
+        {thing.done ? "Ångra" : "Klar"}
+       </button>
       {thing.text}
       </li>
       ))}
+      <input
+        type="text" 
+        value={draft} 
+        onChange={handleChange}
+        placeholder="Skriv uppgift..." 
+      />
+      <button type="button" onClick={handleAdd}>Lägg till</button>
     </ul>
   </main>
 );
 
 }
+
 export default App
