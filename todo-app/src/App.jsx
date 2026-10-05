@@ -8,7 +8,6 @@ function App(){
   { id: 3, text: "Mobilladdare", done: false },
 ])
 
-
 function toggleDone(id) {
   setThings(
     things.map((thing) =>
@@ -35,6 +34,10 @@ function handleAdd() {
   setDraft("");
 }
 
+function removeThing(id) {
+  setThings (things.filter((thing) => thing.id !== id))
+}
+
 return (
   <main>
     <h1>ToDo lista</h1>
@@ -45,6 +48,9 @@ return (
        <button
         onClick={() => toggleDone(thing.id)}>
         {thing.done ? "Ångra" : "Klar"}
+       </button> <button
+        onClick={() => removeThing(thing.id)}>
+          Radera
        </button>
       {thing.text}
       </li>
