@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "./App.css";
 
 function App(){
 
@@ -46,13 +47,15 @@ return (
       {things.map(thing => (
       <li key={thing.id}>
        <button
+        className={thing.done ? "done" : "not-done"}
         onClick={() => toggleDone(thing.id)}>
-        {thing.done ? "Ångra" : "Klar"}
-       </button> <button
-        onClick={() => removeThing(thing.id)}>
-          Radera
-       </button>
+        {thing.done ? "✔" : "⬜"}
+       </button> 
       {thing.text}
+       <button className="delete"
+         onClick={() => removeThing(thing.id)}>
+          ✖
+       </button>
       </li>
       ))}
       <input
