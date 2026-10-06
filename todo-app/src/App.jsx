@@ -58,13 +58,13 @@ return (
        </button>
       </li>
       ))}
-      <input
+      <input className="input"
         type="text" 
         value={draft} 
         onChange={handleChange}
         placeholder="Skriv uppgift..." 
       />
-      <button type="button" onClick={handleAdd}>Lägg till</button>
+      <button className="add" onClick={handleAdd}>Lägg till</button>
     </ul>
   </main>
 );

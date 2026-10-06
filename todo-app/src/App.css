@@ -3,22 +3,29 @@ body {
   margin: 2;
   padding: 2rem;
   font-family: cursive;
-  color: #f8fafc;
   background: #241e72;
+  color: white;
+}
+h1 {
+  color: white;
+  background-color: #20034e;
+  font-family: cursive;
 }
 .done {
   background-color: hwb(122 27% 28%);
   color: white;
-  padding: 8px 14px;
+  padding: 6px 10px;
   border-radius: 6px;
   border: none;
+  margin-top: 0.5rem;
 }
 .not-done {
   background-color: #3498db;
   color: white;
-  padding: 8px 14px;
+  padding: 6px 6px;
   border-radius: 6px;
   border: none;
+  margin-top: 0.5rem;
 }
 .not-done:hover {
   background-color: rgb(12, 99, 22);
@@ -26,9 +33,10 @@ body {
 .delete {
   background-color: hwb(0 4% 6%);
   color: white;
-  padding: 8px 14px;
+  padding: 6px 10px;
   border-radius: 6px;
   border: none;
+  margin-top: 0.5rem;
 }
 .delete:hover {
   background-color: #8b0202;
@@ -38,4 +46,17 @@ li {
   align-items: center;
   gap: 10px;
   justify-content: center;
+}
+.input {
+  background-color: #20034e;
+  border-radius: 5px;
+  font-size: larger;
+  margin-top: 1rem;
+}
+.add {
+  background-color: hwb(122 27% 28%);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
 }
