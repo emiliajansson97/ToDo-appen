@@ -1,0 +1,20 @@
+1-1. Min app sparar alla uppgifter i en state‑variabel som heter things. 
+ Varje gång jag lägger till, tar bort eller markerar en uppgift som klar 
+ uppdateras state med setThings(). 
+ När state ändras skapar React automatiskt om sidan 
+så att gränssnittet visar den nya listan direkt.
+
+1-2. I React får man inte ändra en array direkt med t.ex. .push() eftersom React 
+ inte märker att något har ändrats då.
+ Därför skapar man alltid en ny array när man lägger till eller tar bort uppgifter
+ med hjälp av t.ex. filter.
+
+2. Koden försöker lägga till en ny todo men den använder push som vill ändra den befintliga
+ listan direkt vilket inte går ihop med react.
+ Ett bättre sätt kan vara att skapa en ny lista istället och returnera den
+ med t.ex. return [...todos, text];.
+
+3. Jag ville att mina knappar skulle ändra färg när jag höll musen över dem för att
+ det skulle bli tydligare för användaren men visste inte hur man kunde göra det.
+ så jag kopierade min kod och frågade AI hur jag skulle göra. Det visade
+ sig inte vara så komplicerat utan det var bara att använda :hover.  
